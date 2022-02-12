@@ -798,6 +798,12 @@ picture {
   padding-top: 100px;
   padding-bottom: 100px;
 }
+@media screen and (max-width: 767px) {
+  .token {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+}
 .token__wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -934,6 +940,35 @@ picture {
     max-width: 200px;
   }
 }
+.donations {
+  padding-top: 100px;
+  padding-bottom: 200px;
+}
+@media screen and (max-width: 767px) {
+  .donations {
+    padding-top: 50px;
+    padding-bottom: 100px;
+  }
+}
+.donations .roadmap__block-title {
+  max-width: 860px;
+}
+@media screen and (max-width: 1535px) {
+  .donations .roadmap__block-title {
+    max-width: 500px;
+  }
+}
+@media screen and (max-width: 1023px) {
+  .donations .roadmap__block-title {
+    max-width: 400px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .donations .roadmap__block-title {
+    max-width: 200px;
+  }
+}
+
 .whitepaper {
   padding-top: 100px;
   padding-bottom: 200px;
@@ -1189,10 +1224,17 @@ picture {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  height: 100px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  min-height: 100px;
   padding: 10px 40px;
   border-radius: 44px;
   -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -1206,7 +1248,7 @@ picture {
 }
 @media screen and (max-width: 1279px) {
   .roadmap__box li {
-    height: 85px;
+    min-height: 85px;
   }
 }
 @media screen and (max-width: 767px) {
@@ -1214,6 +1256,9 @@ picture {
     font-size: 14px;
     line-height: 20px;
   }
+}
+.roadmap__box li span {
+  color: #e34358;
 }
 .roadmap__box li:not(:last-of-type) {
   margin-bottom: 10px;
