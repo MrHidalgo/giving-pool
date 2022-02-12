@@ -1,5 +1,27 @@
 // LOGOTYPE :: START
 
-.logo {}
+.logo {
+  display: flex;
+  align-items: center;
+
+  &.logo--header {
+    margin-right: 15px;
+  }
+
+  &__btn {
+    display: flex;
+    align-items: flex-start;
+
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      max-height: 100%;
+      @include adaptive(767) {
+        height: 45px;
+      }
+    }
+  }
+}
 
 // LOGOTYPE :: END

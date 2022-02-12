@@ -20,7 +20,7 @@
       font-size: 35px;
     }
     @include adaptive(767) {
-      font-size: 33px;
+      font-size: 30px;
     }
   }
 
@@ -65,6 +65,9 @@
     color: #FFFFFF;
     @include adaptive(1279) {
       font-size: 14px;
+    }
+    @include adaptive(767) {
+      font-size: 12px;
     }
   }
 }

@@ -2,7 +2,39 @@
 /// @group  Mixin
 ////
 
-/// 
+
+@mixin hoverState($bgc) {
+  position: relative;
+
+  &:hover {
+    &:before,
+    &:after {
+      width: 50%;
+      @include transition(width);
+    }
+  }
+
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    width: 0;
+    height: 1px;
+    background-color: $bgc;
+    @include transition(width);
+  }
+
+  &:before {
+    left: 50%;
+  }
+
+  &:after {
+    right: 50%;
+  }
+}
+
+///
 /// Mixin setting the width and height element.
 ///
 /// @name   mixinDimensions

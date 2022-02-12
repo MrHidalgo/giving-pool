@@ -48,6 +48,45 @@ var Common = function () {
 
 /* harmony default export */ __webpack_exports__["default"] = (Common);
 
+/***/ }),
+
+/***/ "./src/js/macros/hamburger.js":
+/*!************************************!*\
+  !*** ./src/js/macros/hamburger.js ***!
+  \************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+var Hamburger = function () {
+  var initHamburger = function initHamburger() {
+    if (!document.querySelector("[hamburger-js]")) return;
+    var btn = document.querySelector("[hamburger-js]"),
+        hideScrollContainer = document.querySelectorAll("html, body"),
+        mobileContainer = document.querySelector("[mobile-block-js]");
+    /**
+     * @description
+     */
+
+    btn.addEventListener("click", function (ev) {
+      ev.currentTarget.classList.toggle("is-active");
+      mobileContainer.classList.toggle("is-open");
+      hideScrollContainer.forEach(function (val, idx) {
+        val.classList.toggle("is-hideScroll");
+      });
+    });
+  };
+
+  var init = function init() {
+    initHamburger();
+  };
+
+  return {
+    init: init
+  };
+}();
+
+/* harmony default export */ __webpack_exports__["default"] = (Hamburger);
+
 /***/ })
 
 /******/ 	});
@@ -97,12 +136,16 @@ var __webpack_exports__ = {};
   \***********************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _common_common__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./common/common */ "./src/js/common/common.js");
+/* harmony import */ var _macros_hamburger__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./macros/hamburger */ "./src/js/macros/hamburger.js");
+
  // EVENT LISTENER - LOAD
 // ========================================
 
 window.addEventListener('load', function (ev) {
   // COMMON
   _common_common__WEBPACK_IMPORTED_MODULE_0__["default"].initLoad(); // MACROS
+
+  _macros_hamburger__WEBPACK_IMPORTED_MODULE_1__["default"].init();
 }, false); // EVENT LISTENER - SCROLL
 // ========================================
 

@@ -1,57 +1,65 @@
 // BUTTON :: START
 
-// ==================================================
-// ==================================================
-// ==================================================
-
-$bth-width: 250px;
-$bth-height: 45px;
-$btn-border-width: 1px;
-$btn-border-color: rgba(#000, 1);
-$bth-border-radius: 5px;
-$bth-box-shadow: none;
-$bth-background-color: rgba(#000, 1);
-$bth-color: rgba(#fff, 1);
-$bth-font-size: rgba(#000, 1);
-$bth-font-weight: bold;
-
-$btn-color--border: rgba(#000, 1);
-
-// ==================================================
-// ==================================================
-// ==================================================
-
 .c-btn {
   outline: none;
   cursor: pointer;
+  overflow: hidden;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  max-width: $bth-width;
-  height: $bth-height;
-  border: $btn-border-width solid $btn-border-color;
-  box-shadow: $bth-box-shadow;
-  border-radius: $bth-border-radius;
-  color: $bth-color;
-  font-size: $bth-font-size;
-  font-weight: $bth-font-weight;
-
-  &--border {
-    background-color: transparent;
-    color: $btn-color--border;
+  width: auto;
+  height: 50px;
+  margin: 0;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 19px;
+  box-shadow: none;
+  border: none;
+  background: linear-gradient(180deg, #F53548 0%, #9803A4 100%);
+  @include adaptive(767) {
+    height: 45px;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 
-  &--bg {
-    background-color: $bth-background-color;
+  &:after {
+    content: '';
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateY(100%);
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, #9803A4 0%, #F53548 100%);
+    @include transition(opacity, transform);
   }
 
-  &__text {
-    &-wrap {}
+  &:hover {
+    &:after {
+      opacity: 1;
+      transform: translateY(0);
+      @include transition(opacity, transform);
+    }
   }
 
-  &__icon {
-    &-wrap {}
+  &__wrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  span {
+    z-index: 2;
+    position: relative;
+    @extend %fontFiraSans;
+    font-size: 14px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    @include adaptive(767) {
+      font-size: 13px;
+    }
   }
 }
 

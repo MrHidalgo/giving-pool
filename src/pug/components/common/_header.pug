@@ -1,7 +1,40 @@
 // HEADER :: START
 
 nav#header.header
-  .c-grid
+  .c-grid-fluid
     .header__wrapper
+      .header__wrapper-left
+
+        div
+          .logo.logo--header
+            a.logo__btn(href="#")
+              img(src="img/logo.svg" alt="")
+
+          .c-btn__wrapper
+            a.c-btn(href="#")
+             span THE GIVING pool
+
+        div
+
+          +hamburger
+
+      .header__wrapper-mobile(mobile-block-js)
+
+        .header__wrapper-middle
+
+          mav.header__nav
+            a(href="#") Roadmap
+            a(href="#") WHITEPAPER
+            a(href="#") Tokenomics
+
+        .header__wrapper-right
+
+          .c-btn__wrapper
+            a.c-btn(href="#")
+              span chart
+            a.c-btn(href="#")
+              span buy on pancake swap
+            a.c-btn(href="#")
+              span COnnect wallet
 
 // HEADER :: END
