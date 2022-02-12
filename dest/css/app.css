@@ -981,3 +981,100 @@ picture {
 .roadmap__box li:not(:last-of-type) {
   margin-bottom: 10px;
 }
+
+.whitepaper {
+  padding-top: 100px;
+  padding-bottom: 200px;
+}
+@media screen and (max-width: 1279px) {
+  .whitepaper {
+    padding-top: 75px;
+    padding-bottom: 150px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .whitepaper {
+    padding-top: 50px;
+    padding-bottom: 100px;
+  }
+}
+.whitepaper__title {
+  padding-bottom: 100px;
+  font-weight: 900;
+  font-size: 48px;
+  text-transform: uppercase;
+  color: #FFFFFF;
+}
+@media screen and (max-width: 1535px) {
+  .whitepaper__title {
+    font-size: 42px;
+  }
+}
+@media screen and (max-width: 1023px) {
+  .whitepaper__title {
+    font-size: 35px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .whitepaper__title {
+    padding-bottom: 75px;
+    font-size: 30px;
+  }
+}
+.whitepaper__section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 100px 100px 80px;
+  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 50px;
+  background-color: #0B1A4D;
+}
+@media screen and (max-width: 1365px) {
+  .whitepaper__section {
+    padding: 50px 50px 30px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .whitepaper__section {
+    padding: 40px 20px 20px;
+  }
+}
+.whitepaper__section .whitepaper__title {
+  padding-bottom: 20px;
+}
+.whitepaper__desc {
+  padding-bottom: 20px;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 24px;
+  text-align: center;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+@media screen and (max-width: 1365px) {
+  .whitepaper__desc {
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .whitepaper__desc {
+    font-size: 14px;
+  }
+}
+.whitepaper__media {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+}
