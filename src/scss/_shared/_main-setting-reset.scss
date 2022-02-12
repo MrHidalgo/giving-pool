@@ -36,8 +36,9 @@ body {
   display: flex;
   flex-direction: column;
   margin: 0;
-  padding: 0;
-  background-color: #ffffff;
+  padding: 110px 0 0;
+  //background-color: #ffffff;
+  background: linear-gradient(45deg, rgba(#00395a,1) 0%,rgba(#1c1561,1) 100%);
   line-height: 1.42857143;
   font-size: 14px;
   font-weight: normal;
@@ -45,6 +46,9 @@ body {
   letter-spacing: 3px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  @include adaptive(767) {
+    padding-top: 80px;
+  }
 
   > .main {
     display: flex;
