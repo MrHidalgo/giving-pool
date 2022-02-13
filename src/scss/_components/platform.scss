@@ -1,0 +1,315 @@
+// SECTION :: START
+
+.platform {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  @include adaptive(1279) {
+    padding-bottom: 50px;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+
+    &-left {
+      width: 100%;
+      max-width: 460px;
+      padding-right: 20px;
+      @include adaptive(1279) {
+        order: 2;
+        max-width: 100%;
+        padding-right: 0;
+      }
+    }
+
+    &-right {
+      flex: 1;
+      min-width: 1px;
+      max-width: 100%;
+      @include adaptive(1279) {
+        order: 1;
+        padding-bottom: 40px;
+      }
+    }
+  }
+
+  &__title {
+    padding-bottom: 20px;
+    font-weight: 900;
+    font-size: 48px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    @include adaptive(1535) {
+      font-size: 42px;
+    }
+    @include adaptive(1023) {
+      font-size: 35px;
+    }
+    @include adaptive(767) {
+      font-size: 30px;
+    }
+  }
+
+  &__section {
+    display: flex;
+    flex-direction: column;
+    padding: 40px 20px;
+    margin-bottom: 20px;
+    border-radius: 50px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    background-color: #0B1A4D;
+
+    p {
+      word-break: break-word;
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 24px;
+      text-transform: uppercase;
+      color: #FFFFFF;
+      @include adaptive(1023) {
+        font-size: 14px;
+      }
+
+      &:not(:last-of-type) {
+        padding-bottom: 10px;
+      }
+    }
+  }
+
+  &__box {
+    display: flex;
+    align-items: center;
+    padding-bottom: 20px;
+    @include adaptive(767) {
+      flex-wrap: wrap;
+    }
+
+    > div {
+      flex: 1;
+      min-width: 1px;
+      max-width: 100%;
+      @include adaptive(767) {
+        flex: 100%;
+      }
+
+      &:nth-of-type(1) {
+        padding-right: 20px;
+        @include adaptive(767) {
+          order: 2;
+          padding-right: 0;
+          padding-bottom: 40px;
+        }
+      }
+
+      &:nth-of-type(2) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-left: 20px;
+        @include adaptive(767) {
+          order: 1;
+          padding-left: 0;
+          padding-bottom: 40px;
+        }
+
+        img {
+          display: block;
+          max-width: 100%;
+          height: auto;
+          margin-left: auto;
+          margin-right: auto;
+          margin-bottom: 20px;
+        }
+      }
+    }
+
+    &-name {
+      font-weight: bold;
+      font-size: 24px;
+      line-height: 24px;
+      text-align: center;
+      text-transform: uppercase;
+      color: #E34358;
+      @include adaptive(1439) {
+        font-size: 20px;
+      }
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+
+    li {
+      display: flex;
+
+      &:nth-of-type(even) {
+        justify-content: flex-end;
+      }
+
+      &:not(:last-of-type) {
+        padding-bottom: 20px;
+      }
+
+      p {
+        padding-bottom: 10px;
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 24px;
+        text-transform: uppercase;
+        color: #1C337E;
+        @include adaptive(1439) {
+          font-size: 20px;
+        }
+      }
+
+      span {
+        display: block;
+        text-align: center;
+        font-weight: 900;
+        font-size: 36px;
+        line-height: 24px;
+        text-transform: uppercase;
+        color: #E34358;
+        @include adaptive(1439) {
+          font-size: 33px;
+        }
+      }
+    }
+  }
+
+  &__table {
+    display: flex;
+    width: 100%;
+    min-height: 130px;
+    border-radius: 88px;
+    background: linear-gradient(89.95deg, #FFFFFF 0.66%, rgba(28, 51, 126, 0.13) 49.77%, #FFFFFF 97.86%);
+    @include adaptive(767) {
+      flex-direction: column;
+    }
+
+    > div {
+      flex: 1;
+      min-width: 1px;
+      max-width: 100%;
+      min-height: 1px;
+      max-height: 100%;
+      @include adaptive(767) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100px;
+      }
+
+      &:not(:last-of-type) {
+        border-right: 1px solid #000;
+        @include adaptive(767) {
+          border-right: none;
+          border-bottom: 1px solid #000;
+        }
+      }
+
+      > div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100%;
+      }
+
+      p {
+        padding-bottom: 10px;
+        font-weight: 900;
+        font-size: 18px;
+        text-align: center;
+        text-transform: uppercase;
+        color: #0B1A4C;
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        @include adaptive(1439) {
+          font-size: 16px;
+        }
+      }
+
+      span {
+        display: block;
+        font-weight: bold;
+        font-size: 12px;
+        text-align: center;
+        text-transform: uppercase;
+        color: #0B1A4C;
+        @include adaptive(1439) {
+          font-size: 10px;
+        }
+
+        i {
+          color: #E34358;
+        }
+      }
+    }
+
+    &-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+    }
+
+    &-title {
+      padding-bottom: 20px;
+      font-weight: bold;
+      font-size: 18px;
+      text-transform: uppercase;
+      color: #0B1A4C;
+      text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+  }
+
+  .roadmap {
+    &__block {
+      padding-left: 80px;
+      padding-right: 80px;
+      @include adaptive(1023) {
+        padding-left: 40px;
+        padding-right: 40px;
+      }
+      @include adaptive(767) {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      &-title {
+        max-width: 860px;
+        min-height: 150px;
+        font-size: 88px;
+        line-height: 0.8;
+        @include adaptive(1535) {
+          max-width: 800px;
+          font-size: 78px;
+        }
+        @include adaptive(1439) {
+          max-width: 750px;
+          min-height: 130px;
+          font-size: 68px;
+        }
+        @include adaptive(1365) {
+          max-width: 700px;
+        }
+        @include adaptive(1279) {
+          max-width: 600px;
+          font-size: 58px;
+        }
+        @include adaptive(1023) {
+          max-width: 500px;
+          font-size: 48px;
+        }
+        @include adaptive(767) {
+          max-width: 200px;
+          font-size: 30px;
+        }
+      }
+    }
+  }
+}
+
+// SECTION :: END
