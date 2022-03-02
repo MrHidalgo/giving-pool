@@ -31,6 +31,9 @@ section#milestone.milestone
         li!= "<span>launch sale #8-10</span>"
         li begin future developments
 
+      p.milestone__desc for details on giv’s inital sales:
+      p.milestone__desc!= "<span>keep reading</span>"
+
       h3.milestone__title inital token deployment
 
       p.milestone__desc The giving platform will be hosting ten (10) initial launches of 125,000,000 Giv tokens. these tokens are to be the circulating supply for giv.
@@ -43,7 +46,9 @@ section#milestone.milestone
 
       p.milestone__desc detailed in the chart below, you will find the overview for each launch
 
-      img(src="img/img-milestone-1.png" srcset="img/img-milestone-1@2x.png 2x" alt="")
+      .milestone__table-scroll-wrapper
+        .milestone__table-scroll
+          img.milestone__table(src="img/img-milestone-1.png" srcset="img/img-milestone-1@2x.png 2x" alt="")
 
       p.milestone__desc The private sale for each period will run until the lot of GIV is fully sold or until each Limited Sale is closed.
       p.milestone__desc For any tokens that remain unsold, they will be allocated to the company and/or team for future fundraising.
