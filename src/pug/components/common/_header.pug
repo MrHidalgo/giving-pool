@@ -23,9 +23,9 @@ nav#header.header
         .header__wrapper-middle
 
           mav.header__nav
-            a(href="#") Roadmap
-            a(href="#") WHITEPAPER
-            a(href="#") Tokenomics
+            a(href="#" class!= '') Roadmap
+            a(href="/whitepaper.html" class!= (pageClassName === 'p-whitepaper')?'is-active':'') WHITEPAPER
+            a(href="/tokenomics.html" class!= (pageClassName === 'p-tokenomics')?'is-active':'') Tokenomics
 
         .header__wrapper-right
 

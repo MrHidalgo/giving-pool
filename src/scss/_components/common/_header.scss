@@ -161,6 +161,10 @@
       @include adaptive(767) {
         font-size: 20px;
       }
+
+      &.is-active {
+        color: #f53548;
+      }
     }
   }
 }
