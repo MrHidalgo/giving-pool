@@ -57,7 +57,7 @@
     margin-bottom: 20px;
     border-radius: 50px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    background-color: #0B1A4D;
+    background-color: #010430;
 
     p {
       word-break: break-word;
@@ -157,7 +157,7 @@
         font-size: 24px;
         line-height: 24px;
         text-transform: uppercase;
-        color: #1C337E;
+        color: #F53548;
         @include adaptive(1439) {
           font-size: 20px;
         }
@@ -170,7 +170,7 @@
         font-size: 36px;
         line-height: 24px;
         text-transform: uppercase;
-        color: #E34358;
+        color: #fff;
         @include adaptive(1439) {
           font-size: 33px;
         }
@@ -183,7 +183,7 @@
     width: 100%;
     min-height: 130px;
     border-radius: 88px;
-    background: linear-gradient(89.95deg, #FFFFFF 0.66%, rgba(28, 51, 126, 0.13) 49.77%, #FFFFFF 97.86%);
+    background: linear-gradient(270.17deg, #1C337E 14.88%, #F9FAFF 89.04%, #F9FAFF 89.04%);
     @include adaptive(767) {
       flex-direction: column;
     }
@@ -260,7 +260,7 @@
       font-weight: bold;
       font-size: 18px;
       text-transform: uppercase;
-      color: #0B1A4C;
+      color: #fff;
       text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     }
   }

@@ -1,6 +1,6 @@
 // SECTION :: START
 
-.whitepaper {
+.milestone {
   padding-top: 100px;
   padding-bottom: 200px;
   @include adaptive(1279) {
@@ -30,7 +30,7 @@
     }
   }
 
-  &__section {
+  &__wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -45,8 +45,45 @@
       padding: 40px 20px 20px;
     }
 
-    .whitepaper__title {
+    .milestone__title {
       padding-bottom: 20px;
+      text-align: center;
+    }
+
+    > img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      margin: 20px auto;
+    }
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    list-style-type: disc;
+
+    li {
+      list-style-type: disc;
+      font-weight: bold;
+      font-size: 20px;
+      line-height: 24px;
+      text-align: center;
+      color: #ffffff;
+      text-transform: uppercase;
+      @include adaptive(1365) {
+        font-size: 18px;
+      }
+      @include adaptive(767) {
+        font-size: 14px;
+      }
+
+      span {
+        color: #f53548;
+      }
     }
   }
 
@@ -64,15 +101,6 @@
     @include adaptive(767) {
       font-size: 14px;
     }
-  }
-
-  &__media {
-    display: block;
-    max-width: 100%;
-    height: auto;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 20px;
   }
 }
 
