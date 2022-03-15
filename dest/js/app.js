@@ -146,6 +146,27 @@ window.addEventListener('load', function (ev) {
   _common_common__WEBPACK_IMPORTED_MODULE_0__["default"].initLoad(); // MACROS
 
   _macros_hamburger__WEBPACK_IMPORTED_MODULE_1__["default"].init();
+  $('[popup-js]').magnificPopup({
+    type: 'inline',
+    fixedContentPos: true,
+    fixedBgPos: true,
+    overflowY: 'auto',
+    closeBtnInside: true,
+    preloader: false,
+    midClick: true,
+    removalDelay: 300,
+    mainClass: 'is-show',
+    callbacks: {
+      beforeOpen: function beforeOpen() {
+        this.st.mainClass = this.st.el.attr('data-effect');
+      },
+      close: function close() {}
+    }
+  });
+  $('a[href="#welcomeModal"][popup-js]').click();
+  $('[popup-close-js]').on('click', function (ev) {
+    $.magnificPopup.close();
+  });
 }, false); // EVENT LISTENER - SCROLL
 // ========================================
 

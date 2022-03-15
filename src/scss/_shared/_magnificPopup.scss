@@ -1,11 +1,11 @@
-.modal {
+.c-modal {
   position: relative;
   width: 100%;
-  //max-width: 500px;
-  //min-height: 200px;
+  max-width: 550px;
   margin-left: auto;
   margin-right: auto;
-  background-color: #fff;
+  border-radius: 30px;
+  background: linear-gradient(180deg, #000E38 0%, #1C2F6C 100%);
 }
 
 

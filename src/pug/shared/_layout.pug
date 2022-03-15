@@ -17,6 +17,14 @@ html(lang="en")
     block footer
       include ../components/common/_footer
 
+    mixin modalContent()
+      .c-modal__body
+        a(href="#" popup-close-js) Continue to website
+
+
+    +modal('welcomeModal', 'modalContent')
+    a(href="#welcomeModal" data-effect='mfp-zoom-in' popup-js)
+
 
   block script
     include _script
