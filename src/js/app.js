@@ -2,6 +2,19 @@ import Common from "./common/common";
 
 import Hamburger from "./macros/hamburger";
 
+const initHeaderFixed = () => {
+
+  let countScroll = $(window).scrollTop(),
+    headerElement = $('.header');
+
+  if (countScroll > 10) {
+    headerElement.addClass("is-fixed");
+  } else {
+    headerElement.removeClass("is-fixed");
+  }
+
+};
+
 // EVENT LISTENER - LOAD
 // ========================================
 window.addEventListener('load', (ev) => {
@@ -34,9 +47,13 @@ window.addEventListener('load', (ev) => {
     $.magnificPopup.close();
   })
 
+  initHeaderFixed();
+
 }, false);
 
 
 // EVENT LISTENER - SCROLL
 // ========================================
-window.addEventListener('scroll', (ev) => {}, false);
+window.addEventListener('scroll', (ev) => {
+  initHeaderFixed();
+}, false);

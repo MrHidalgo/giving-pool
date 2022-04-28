@@ -6,13 +6,41 @@
   top: 0;
   left: 0;
   width: 100%;
-  background-color: #000E38;
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+  background: linear-gradient(270deg, rgba(32, 48, 104, 0.2226) 1.56%, rgba(241, 243, 250, 0.2226) 49.48%, rgba(18, 26, 52, 0.4134) 100%);
+  @include transition(background-color);
+
+  &.is-fixed {
+    background-color: #000E38;
+    @include transition(background-color);
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/img-header-bg.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
 
   &__wrapper {
+    z-index: 2;
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
     height: 110px;
+    padding-left: 40px;
+    padding-right: 40px;
+    @include adaptive(1439) {
+      padding-left: 0;
+      padding-right: 0;
+    }
     @include adaptive(767) {
       height: 80px;
     }
@@ -20,7 +48,7 @@
     &-left {
       display: flex;
       align-items: center;
-      @include adaptive(1439) {
+      @include adaptive(1279) {
         justify-content: space-between;
         width: 100%;
       }
@@ -39,7 +67,7 @@
 
         &:nth-of-type(2) {
           display: none;
-          @include adaptive(1439) {
+          @include adaptive(1279) {
             display: flex;
           }
         }
@@ -55,27 +83,27 @@
     &-right {
       display: flex;
       justify-content: flex-end;
-      @include adaptive(1439) {
+      @include adaptive(1279) {
         flex-direction: column;
         justify-content: flex-start;
         width: 100%;
       }
 
       .c-btn {
-        @include adaptive(1439) {
+        @include adaptive(1279) {
           width: 100%;
         }
 
         &:not(:last-of-type) {
           margin-right: 15px;
-          @include adaptive(1439) {
+          @include adaptive(1279) {
             margin-right: 0;
             margin-bottom: 20px;
           }
         }
 
         &__wrapper {
-          @include adaptive(1439) {
+          @include adaptive(1279) {
             width: 100%;
             flex-direction: column;
           }
@@ -91,7 +119,7 @@
       min-width: 1px;
       max-width: 100%;
       padding-left: 20px;
-      @include adaptive(1439) {
+      @include adaptive(1279) {
         z-index: 1000;
         overflow: hidden;
         overflow-y: auto;
@@ -132,7 +160,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    @include adaptive(1439) {
+    @include adaptive(1279) {
       flex-direction: column;
       align-items: flex-start;
       justify-content: flex-start;
@@ -142,20 +170,19 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-left: 20px;
-      margin-right: 20px;
-      font-size: 24px;
+      margin-left: 15px;
+      margin-right: 15px;
+      font-size: 16px;
       text-align: center;
       text-transform: uppercase;
       color: #FFFFFF;
       @extend %fontFiraSans;
       @include hoverState(#fff);
-      @include adaptive(1535) {
+      @include adaptive(1439) {
         margin-left: 10px;
         margin-right: 10px;
-        font-size: 22px;
       }
-      @include adaptive(1439) {
+      @include adaptive(1279) {
         margin-bottom: 30px;
       }
       @include adaptive(767) {

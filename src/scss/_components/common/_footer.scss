@@ -2,8 +2,8 @@
 
 .footer {
   padding-top: 50px;
-  padding-bottom: 30px;
-  background-color: #000e38;
+  padding-bottom: 50px;
+  //background-color: #000e38;
 
   &__title {
     font-weight: 900;
@@ -39,6 +39,11 @@
       &:hover {
         opacity: 0.75;
         @include transition(opacity);
+
+        img {
+          filter: drop-shadow(0 5px 2px rgba(#000, 0.3));
+          @include transition(filter);
+        }
       }
 
       img {
@@ -47,6 +52,8 @@
         height: auto;
         margin-left: 10px;
         margin-right: 10px;
+        filter: drop-shadow(0 12px 2px rgba(#000, 0.3));
+        @include transition(filter);
         @include adaptive(767) {
           height: 35px;
         }

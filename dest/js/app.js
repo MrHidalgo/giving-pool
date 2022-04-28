@@ -138,8 +138,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _common_common__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./common/common */ "./src/js/common/common.js");
 /* harmony import */ var _macros_hamburger__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./macros/hamburger */ "./src/js/macros/hamburger.js");
 
- // EVENT LISTENER - LOAD
+
+
+var initHeaderFixed = function initHeaderFixed() {
+  var countScroll = $(window).scrollTop(),
+      headerElement = $('.header');
+
+  if (countScroll > 10) {
+    headerElement.addClass("is-fixed");
+  } else {
+    headerElement.removeClass("is-fixed");
+  }
+}; // EVENT LISTENER - LOAD
 // ========================================
+
 
 window.addEventListener('load', function (ev) {
   // COMMON
@@ -167,10 +179,13 @@ window.addEventListener('load', function (ev) {
   $('[popup-close-js]').on('click', function (ev) {
     $.magnificPopup.close();
   });
+  initHeaderFixed();
 }, false); // EVENT LISTENER - SCROLL
 // ========================================
 
-window.addEventListener('scroll', function (ev) {}, false);
+window.addEventListener('scroll', function (ev) {
+  initHeaderFixed();
+}, false);
 }();
 /******/ })()
 ;
