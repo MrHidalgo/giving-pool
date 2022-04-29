@@ -34,10 +34,10 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 110px;
-    padding-left: 40px;
-    padding-right: 40px;
-    @include adaptive(1439) {
+    height: 85px;
+    padding-left: 43px;
+    padding-right: 43px;
+    @include adaptive(1279) {
       padding-left: 0;
       padding-right: 0;
     }
@@ -127,7 +127,7 @@
         visibility: hidden;
         transform: translateX(-100%);
         position: fixed;
-        top: 110px;
+        top: 85px;
         left: 0;
         flex-direction: column;
         align-items: flex-start;
@@ -135,9 +135,8 @@
         flex: unset;
         width: 100%;
         max-width: 400px;
-        height: calc(100% - 110px);
+        height: calc(100% - 85px);
         padding: 20px;
-        border-top: 1px solid rgba(#fff, 0.1);
         box-shadow: 5px 0 10px 0 rgba(#000e38, 0.3);
         background-color: #0b1a4d;
         @include transition(opacity, visibility, transform);

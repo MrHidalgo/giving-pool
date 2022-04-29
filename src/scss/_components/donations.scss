@@ -1,27 +1,5 @@
 // SECTION :: START
 
-.donations {
-  padding-top: 100px;
-  padding-bottom: 200px;
-  @include adaptive(767) {
-    padding-top: 50px;
-    padding-bottom: 100px;
-  }
-
-  .roadmap__block {
-    &-title {
-      max-width: 860px;
-      @include adaptive(1535) {
-        max-width: 500px;
-      }
-      @include adaptive(1023) {
-        max-width: 400px;
-      }
-      @include adaptive(767) {
-        max-width: 200px;
-      }
-    }
-  }
-}
+.donations {}
 
 // SECTION :: END

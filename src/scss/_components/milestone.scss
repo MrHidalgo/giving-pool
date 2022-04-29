@@ -1,25 +1,23 @@
 // SECTION :: START
 
 .milestone {
-  padding-top: 100px;
-  padding-bottom: 100px;
-  @include adaptive(1279) {
-    padding-top: 75px;
-    padding-bottom: 75px;
-  }
+  padding-top: 65px;
   @include adaptive(767) {
     padding-top: 50px;
-    padding-bottom: 50px;
   }
 
   &__title {
-    padding-bottom: 50px;
+    transform: translateX(-14px);
+    padding-bottom: 29px;
     font-weight: 900;
     font-size: 40px;
     line-height: 74px;
     text-transform: uppercase;
     letter-spacing: 3px;
     color: #FFFFFF;
+    @include adaptive(1279) {
+      transform: translateX(0);
+    }
     @include adaptive(1023) {
       font-size: 35px;
     }
@@ -32,23 +30,21 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 100px 100px 80px;
+    padding: 43px 50px;
     border-radius: 10px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     background: linear-gradient(90deg, #09103A 0%, #493E3E 45.83%, #09103A 100%);
-    @include adaptive(1365) {
-      padding: 50px 50px 30px;
-    }
     @include adaptive(767) {
-      padding: 40px 20px 20px;
+      padding: 20px;
     }
 
     .milestone__title {
       padding-top: 40px;
-      padding-bottom: 40px;
+      padding-bottom: 15px;
       text-align: center;
       font-size: 48px;
-      @include adaptive(1439) {
+      line-height: normal;
+      @include adaptive(1279) {
         font-size: 42px;
       }
       @include adaptive(1023) {
@@ -63,16 +59,8 @@
       display: block;
       max-width: 100%;
       height: auto;
-      margin: 0 auto 40px;
+      margin: 0 auto;
     }
-  }
-
-  &__list,
-  &__desc {
-    width: 100%;
-    max-width: 1325px;
-    margin-left: auto;
-    margin-right: auto;
   }
 
   &__list {
@@ -80,7 +68,7 @@
     align-items: center;
     flex-direction: column;
     padding-left: 20px;
-    padding-bottom: 20px;
+    padding-bottom: 24px;
     list-style-type: disc;
 
     li {
@@ -90,8 +78,9 @@
       line-height: 24px;
       text-align: center;
       color: #ffffff;
+      letter-spacing: 3px;
       text-transform: uppercase;
-      @include adaptive(1365) {
+      @include adaptive(1279) {
         font-size: 18px;
       }
       @include adaptive(767) {
@@ -112,14 +101,15 @@
   }
 
   &__desc {
-    padding-bottom: 20px;
+    padding-bottom: 24px;
     font-weight: bold;
     font-size: 20px;
     line-height: 24px;
     text-align: center;
     color: #ffffff;
+    letter-spacing: 3px;
     text-transform: uppercase;
-    @include adaptive(1365) {
+    @include adaptive(1279) {
       font-size: 18px;
     }
     @include adaptive(767) {

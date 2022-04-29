@@ -174,8 +174,8 @@ window.addEventListener('load', function (ev) {
       },
       close: function close() {}
     }
-  });
-  $('a[href="#welcomeModal"][popup-js]').click();
+  }); // $('a[href="#welcomeModal"][popup-js]').click();
+
   $('[popup-close-js]').on('click', function (ev) {
     $.magnificPopup.close();
   });

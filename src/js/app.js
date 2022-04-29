@@ -42,7 +42,7 @@ window.addEventListener('load', (ev) => {
       close: function() {}
     }
   });
-  $('a[href="#welcomeModal"][popup-js]').click();
+  // $('a[href="#welcomeModal"][popup-js]').click();
   $('[popup-close-js]').on('click', (ev) => {
     $.magnificPopup.close();
   })
