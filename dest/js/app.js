@@ -50,6 +50,117 @@ var Common = function () {
 
 /***/ }),
 
+/***/ "./src/js/macros/countdown.js":
+/*!************************************!*\
+  !*** ./src/js/macros/countdown.js ***!
+  \************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+var Countdown = function () {
+  var init = function init() {
+    var elDays = document.querySelector(".days");
+    var elHours = document.querySelector(".hours");
+    var elMinutes = document.querySelector(".minutes");
+    var elSeconds = document.querySelector(".seconds");
+    var timeLeft = {
+      days: 0,
+      hours: 0,
+      minutes: 0,
+      seconds: 0
+    };
+    var totalSeconds = 0;
+    var futureDate = new Date();
+    futureDate.setDate(futureDate.getDate() + 20);
+
+    function init() {
+      totalSeconds = Math.floor((futureDate - new Date()) / 1000);
+      setTimeLeft();
+      var interval = setInterval(function () {
+        if (totalSeconds < 0) {
+          clearInterval(interval);
+        }
+
+        countTime();
+      }, 1000);
+    }
+
+    function countTime() {
+      if (totalSeconds > 0) {
+        --timeLeft.seconds;
+
+        if (timeLeft.minutes >= 0 && timeLeft.seconds < 0) {
+          timeLeft.seconds = 59;
+          --timeLeft.minutes;
+
+          if (timeLeft.hours >= 0 && timeLeft.minutes < 0) {
+            timeLeft.minutes = 59;
+            --timeLeft.hours;
+
+            if (timeLeft.days >= 0 && timeLeft.hours < 0) {
+              timeLeft.hours = 23;
+              --timeLeft.days;
+            }
+          }
+        }
+      }
+
+      --totalSeconds;
+      printTime();
+    }
+
+    function printTime() {
+      animateFlip(elDays, timeLeft.days);
+      animateFlip(elHours, timeLeft.hours);
+      animateFlip(elMinutes, timeLeft.minutes);
+      animateFlip(elSeconds, timeLeft.seconds);
+    }
+
+    function animateFlip(element, value) {
+      var valueInDom = element.querySelector(".bottom-back").innerText;
+      var currentValue = value < 10 ? "0" + value : "" + value;
+      if (valueInDom === currentValue) return;
+      element.querySelector(".top-back span").innerText = currentValue;
+      element.querySelector(".bottom-back span").innerText = currentValue;
+      gsap.to(element.querySelector(".top"), 0.7, {
+        rotationX: "-180deg",
+        transformPerspective: 300,
+        ease: Quart.easeOut,
+        onComplete: function onComplete() {
+          element.querySelector(".top").innerText = currentValue;
+          element.querySelector(".bottom").innerText = currentValue;
+          gsap.set(element.querySelector(".top"), {
+            rotationX: 0
+          });
+        }
+      });
+      gsap.to(element.querySelector(".top-back"), 0.7, {
+        rotationX: 0,
+        transformPerspective: 300,
+        ease: Quart.easeOut,
+        clearProps: "all"
+      });
+    }
+
+    function setTimeLeft() {
+      timeLeft.days = Math.floor(totalSeconds / (60 * 60 * 24));
+      timeLeft.hours = Math.floor(totalSeconds / (60 * 60) % 24);
+      timeLeft.minutes = Math.floor(totalSeconds / 60 % 60);
+      timeLeft.seconds = Math.floor(totalSeconds % 60);
+    }
+
+    init();
+  };
+
+  return {
+    init: init
+  };
+}();
+
+/* harmony default export */ __webpack_exports__["default"] = (Countdown);
+
+/***/ }),
+
 /***/ "./src/js/macros/hamburger.js":
 /*!************************************!*\
   !*** ./src/js/macros/hamburger.js ***!
@@ -137,6 +248,8 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _common_common__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./common/common */ "./src/js/common/common.js");
 /* harmony import */ var _macros_hamburger__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./macros/hamburger */ "./src/js/macros/hamburger.js");
+/* harmony import */ var _macros_countdown__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./macros/countdown */ "./src/js/macros/countdown.js");
+
 
 
 
@@ -158,6 +271,7 @@ window.addEventListener('load', function (ev) {
   _common_common__WEBPACK_IMPORTED_MODULE_0__["default"].initLoad(); // MACROS
 
   _macros_hamburger__WEBPACK_IMPORTED_MODULE_1__["default"].init();
+  _macros_countdown__WEBPACK_IMPORTED_MODULE_2__["default"].init();
   $('[popup-js]').magnificPopup({
     type: 'inline',
     fixedContentPos: true,

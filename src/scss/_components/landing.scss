@@ -1,0 +1,405 @@
+// SECTION :: START
+
+.landing {
+  &__container {
+    padding: 45px 0 55px;
+    background: linear-gradient(270.5deg, #090F3A 0.56%, #493E3E 48.22%, #090F3A 99.66%), #FFFFFF;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+
+  &__wrapper {
+    &-1,
+    &-3,
+    &-4 {
+      padding-left: 40px;
+      padding-right: 40px;
+      @include adaptive(767) {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+    }
+
+    &-2 {
+      padding: 35px 40px 55px;
+      background: linear-gradient(180deg, rgba(103, 105, 166, 0.238) 0%, rgba(123, 126, 206, 0.0136) 100%);
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      @include adaptive(767) {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+    }
+
+    &-3 {
+      @include adaptive(767) {
+        padding-left: 0;
+      }
+    }
+  }
+
+  &__row {
+    display: flex;
+    align-items: flex-end;
+  }
+
+  &__col {
+    &-1,
+    &-3 {
+      display: flex;
+      justify-content: center;
+      flex: 1;
+      min-width: 1px;
+      max-width: 100%;
+      @include adaptive(1023) {
+        opacity: 0;
+      }
+      @include adaptive(767) {
+        display: none;
+      }
+    }
+
+    &-2 {
+      position: relative;
+      width: 100%;
+      max-width: 210px;
+      height: 220px;
+      @include adaptive(767) {
+        max-width: 100%;
+      }
+
+      .logo {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        @include adaptive(767) {
+          position: relative;
+        }
+
+        &__btn {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          @include adaptive(767) {
+            position: relative;
+          }
+
+          img {
+            max-width: unset;
+            max-height: unset;
+            transform: translate(-25%, -10%);
+            @include adaptive(767) {
+              max-width: 100%;
+              height: auto;
+              transform: unset;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__timer {
+    $GrayishBlue: #161A39;
+    @include adaptive(767) {
+      width: 100%;
+    }
+
+    .container-countdown {
+      display: flex;
+      flex-flow: row nowrap;
+      @include adaptive(767) {
+        width: 100%;
+      }
+    }
+
+    .countdown-block {
+      position: relative;
+      display: flex;
+      align-items: center;
+      flex-flow: column nowrap;
+      margin-right: 21px;
+      @include adaptive(767) {
+        flex: 1;
+        min-width: 1px;
+        max-width: 100%;
+        margin-right: 10px;
+      }
+
+      &:not(:last-of-type) {
+        &:before,
+        &:after {
+          content: '';
+          position: absolute;
+          right: -14px;
+          width: 7px;
+          height: 7px;
+          border-radius: 50%;
+          background-color: #ffffff;
+          @include adaptive(767) {
+            right: -7px;
+            width: 3px;
+            height: 3px;
+          }
+        }
+
+        &:before {
+          top: calc(50% - 30px);
+          @include adaptive(767) {
+            top: calc(50% - 24px);
+          }
+        }
+
+        &:after {
+          bottom: calc(50% + 10px);
+          @include adaptive(767) {
+            bottom: calc(50% + 10px);
+          }
+        }
+
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      .subtitle {
+        font-size: 18px;
+        line-height: 20px;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 0;
+        color: #FFFFFF;
+        font-family: 'Share Tech', sans-serif;
+        @include adaptive(767) {
+          font-size: 12px;
+          line-height: normal;
+        }
+      }
+    }
+
+    .time-element {
+      //overflow: hidden;
+      position: relative;
+      width: 120px;
+      height: 140px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      box-shadow: 0px 10px 15px 0px #16151d;
+      background-color: #161A39;
+      font-family: 'Share Tech', sans-serif;
+      color: #fff;
+      font-size: 5.5em;
+      line-height: 143px;
+      text-align: center;
+      @include adaptive(767) {
+        width: 100%;
+        height: 100px;
+        font-size: 2.8em;
+        line-height: 104px;
+      }
+
+      u {
+        z-index: 5;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background-color: #604A4A;
+        @include adaptive(767) {
+          height: 2px;
+        }
+      }
+
+      &::before,
+      &::after {
+        content: "";
+        z-index: 6;
+        position: absolute;
+        top: calc(50% - 6px);
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background-color: #604A4A;
+        @include adaptive(767) {
+          top: calc(50% - 3px);
+          width: 6px;
+          height: 6px;
+        }
+      }
+
+      &::before {
+        left: -6px;
+        @include adaptive(767) {
+          left: -4px;
+        }
+      }
+
+      &::after {
+        right: -6px;
+        @include adaptive(767) {
+          right: -4px;
+        }
+      }
+
+      > span {
+        position: absolute;
+        left: 0;
+        right: 0;
+      }
+
+      .top {
+        z-index: 3;
+        transform-origin: 50% 100%;
+        transform: perspective(200px);
+        border-radius: 8px;
+        background-color: #161A39;
+      }
+
+      .bottom {
+        z-index: 1;
+        border-radius: 8px 8px 0 0;
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          display: block;
+          width: 100%;
+          height: 50%;
+          border-radius: 8px 8px 0 0;
+          background-color: #33354d;
+        }
+      }
+
+      .bottom-back {
+        z-index: 2;
+        overflow: hidden;
+        top: 0;
+        height: 50%;
+        border-radius: 8px 8px 0 0;
+        background-color: #33354d;
+
+        span {
+          position: absolute;
+          top: 0;
+          right: 0;
+          left: 0;
+          bottom: 0;
+          margin: auto;
+          border-radius: 8px 8px 0 0;
+        }
+      }
+
+      .top,
+      .top-back {
+        overflow: hidden;
+        height: 50%;
+        border-radius: 8px;
+        backface-visibility: hidden;
+      }
+
+      .top-back {
+        z-index: 4;
+        bottom: 0;
+        transform-origin: 50% 0;
+        transform: perspective(200px) rotateX(180deg);
+        border-radius: 8px;
+        background-color: rgb(51, 53, 77);
+
+        span {
+          position: absolute;
+          top: -100%;
+          left: 0;
+          right: 0;
+          margin: auto;
+          border-radius: 8px;
+        }
+      }
+    }
+
+    &-wrapper {
+      z-index: 2;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+
+    &-title {
+      padding-bottom: 20px;
+      font-weight: 400;
+      font-size: 29px;
+      line-height: 33px;
+      letter-spacing: 0;
+      text-align: center;
+      color: #FFFFFF;
+      @include adaptive(767) {
+        font-size: 22px;
+        line-height: normal;
+      }
+    }
+  }
+
+  &__heading {
+    font-weight: 900;
+    font-size: 18px;
+    line-height: 55px;
+    text-align: center;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    @include adaptive(1279) {
+      font-size: 16px;
+      line-height: 50px;
+    }
+    @include adaptive(767) {
+      padding-bottom: 10px;
+      line-height: 40px;
+    }
+  }
+
+  &__desc {
+    font-weight: 700;
+    font-size: 11px;
+    line-height: 12px;
+    text-align: center;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+
+    &:not(:last-of-type) {
+      padding-bottom: 10px;
+    }
+  }
+
+  &__subtitle {
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 55px;
+    text-align: center;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    @include adaptive(1279) {
+      font-size: 22px;
+      line-height: 50px;
+    }
+    @include adaptive(767) {
+      font-size: 18px;
+      line-height: 45px;
+    }
+  }
+}
+
+// SECTION :: END

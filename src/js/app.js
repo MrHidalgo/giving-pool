@@ -1,6 +1,7 @@
 import Common from "./common/common";
 
 import Hamburger from "./macros/hamburger";
+import Countdown from "./macros/countdown";
 
 const initHeaderFixed = () => {
 
@@ -24,6 +25,7 @@ window.addEventListener('load', (ev) => {
 
   // MACROS
   Hamburger.init()
+  Countdown.init();
 
   $('[popup-js]').magnificPopup({
     type: 'inline',
