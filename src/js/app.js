@@ -25,7 +25,7 @@ window.addEventListener('load', (ev) => {
 
   // MACROS
   Hamburger.init()
-  Countdown.init();
+  if($('.landing__timer').length > 0) Countdown.init();
 
   $('[popup-js]').magnificPopup({
     type: 'inline',

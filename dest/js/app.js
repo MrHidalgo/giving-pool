@@ -271,7 +271,7 @@ window.addEventListener('load', function (ev) {
   _common_common__WEBPACK_IMPORTED_MODULE_0__["default"].initLoad(); // MACROS
 
   _macros_hamburger__WEBPACK_IMPORTED_MODULE_1__["default"].init();
-  _macros_countdown__WEBPACK_IMPORTED_MODULE_2__["default"].init();
+  if ($('.landing__timer').length > 0) _macros_countdown__WEBPACK_IMPORTED_MODULE_2__["default"].init();
   $('[popup-js]').magnificPopup({
     type: 'inline',
     fixedContentPos: true,
