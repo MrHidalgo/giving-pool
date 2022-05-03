@@ -123,6 +123,8 @@
   &__col {
     &-1,
     &-3 {
+      z-index: 3;
+      position: relative;
       display: flex;
       align-items: center;
       flex-direction: column;
@@ -139,6 +141,7 @@
     }
 
     &-2 {
+      z-index: 0;
       position: relative;
       width: 100%;
       max-width: 210px;
@@ -532,19 +535,48 @@
   &__stat {
     display: flex;
     align-items: flex-start;
+    width: 100%;
+    padding: 0 30px;
+    @include adaptive(1279) {
+      padding-left: 0;
+      padding-right: 0;
+    }
+    @include adaptive(767) {
+      //flex-direction: column;
+      //align-items: center;
+      flex-wrap: wrap;
+    }
+
+    > div {
+      position: relative;
+      flex: 1;
+      min-width: 1px;
+      max-width: 100%;
+      height: 147px;
+      @include adaptive(767) {
+        flex: 100%;
+      }
+    }
 
     svg {
+      transform: translate(-27%, -43%);
+      position: absolute;
+      top: 0;
+      left: 0;
       display: block;
-      max-width: 100%;
-      height: auto;
       margin-left: auto;
       margin-right: auto;
+      @include adaptive(767) {
+        left: 50%;
+        transform: translate(-50%, -43%);
+      }
     }
 
     &-wrapper {
       display: flex;
       align-items: center;
       flex-direction: column;
+      width: 100%;
       text-align: center;
       padding-left: 20px;
       @include adaptive(767) {
@@ -553,6 +585,8 @@
     }
 
     &-title {
+      z-index: 2;
+      position: relative;
       font-weight: 900;
       font-size: 24px;
       line-height: 74px;
